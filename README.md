@@ -1,2 +1,2 @@
-# Scripting-Madness
-⚠️ Script Dump ⚠️ Proceed With Caution ⚠️
+# Scripting Madness
+A place to dump my random scripts
