@@ -1,45 +1,48 @@
 #!/usr/local/bin/bash
 # !/bin/bash
 
-# File Size Change Tracker (created by Utkarsh Priyam (utk003) on Wednesday, June 30, 2021)
-# ---------------------------------------------------------------------------------------------
-# This script compares the files present in 2 different locations (both provided as arguments).
-# It compares the relative sizes of corresponding files and indicates whether any given file
-# has increased in size, decreased in size, or neither. If it has changed, the resulting table
-# also includes the amount (in the most appropriate units) by which the file size has changed.
-# Additionally, the last row of the table includes an overall change, which can help judge
-# whether most of the changes were actual additions and removals or just from moved files.
-#
-# NOTE: This script assumes that all of the files are located at the same paths relative to
-# the provided locations. Each mismatched/moved file will appear twice in the resulting table,
-# indicated that the file is missing in one location and new in another.
+# --------------------------------------------------------------------------------------------- #
+# File Size Change Tracker                                                                      #
+# @author Utkarsh Priyam (utk003)                                                               #
+# @version Wednesday, June 30, 2021                                                             #
+# --------------------------------------------------------------------------------------------- #
+# This script compares the files present in 2 different locations (both provided as arguments). #
+# It compares the relative sizes of corresponding files and indicates whether any given file    #
+# has increased in size, decreased in size, or neither. If it has changed, the resulting table  #
+# also includes the amount (in the most appropriate units) by which the file size has changed.  #
+# Additionally, the last row of the table includes an overall change, which can help judge      #
+# whether most of the changes were actual additions and removals or just from moved files.      #
+#                                                                                               #
+# NOTE: This script assumes that all of the files are located at the same paths relative to     #
+# the provided locations. Each mismatched/moved file will appear twice in the resulting table,  #
+# indicated that the file is missing in one location and new in another.                        #
+# --------------------------------------------------------------------------------------------- #
 
-# ------------------------------------------------------------------------------
-# LICENSE:
-# ------------------------------------------------------------------------------
-# MIT License
-#
-# Copyright (c) 2021 Utkarsh Priyam
-#
-# Permission is hereby granted, free of charge, to any person obtaining a copy
-# of this software and associated documentation files (the "Software"), to deal
-# in the Software without restriction, including without limitation the rights
-# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-# copies of the Software, and to permit persons to whom the Software is
-# furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included in all
-# copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-# SOFTWARE.
-# ------------------------------------------------------------------------------
-
+# ------------------------------------------------------------------------------ #
+# LICENSE:                                                                       #
+# ------------------------------------------------------------------------------ #
+# MIT License                                                                    #
+#                                                                                #
+# Copyright (c) 2021 Utkarsh Priyam                                              #
+#                                                                                #
+# Permission is hereby granted, free of charge, to any person obtaining a copy   #
+# of this software and associated documentation files (the "Software"), to deal  #
+# in the Software without restriction, including without limitation the rights   #
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell      #
+# copies of the Software, and to permit persons to whom the Software is          #
+# furnished to do so, subject to the following conditions:                       #
+#                                                                                #
+# The above copyright notice and this permission notice shall be included in all #
+# copies or substantial portions of the Software.                                #
+#                                                                                #
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR     #
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,       #
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE    #
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER         #
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,  #
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE  #
+# SOFTWARE.                                                                      #
+# ------------------------------------------------------------------------------ #
 
 # save current working dir
 curr=`pwd`
